@@ -27,6 +27,8 @@ const squares = Array.from(document.querySelectorAll('#board div'));
 /*----- event listeners -----*/
 document.getElementById('board').addEventListener('click', handleTurn);
 
+document.getElementById('reset-button').addEventListener('click', init);
+
 /*----- functions -----*/
 
 function init() {
