@@ -11,6 +11,7 @@ let turn = 'X';
 /*----- cached element references -----*/
 
 const squares = Array.from(document.querySelectorAll('#board div'));
+// new code belowconst messages = document.querySelector('h2');
 
 /*----- event listeners -----*/
 document.getElementById('board').addEventListener('click', handleTurn);
@@ -23,7 +24,7 @@ function init() {
     '', '', '',
     '', '', ''
     ];
-    // new code here
+    
     render();
     };
 //be sure to call the init function!
@@ -32,11 +33,12 @@ init();
 
 function render() {
     board.forEach(function(mark, index){
-        //console.log(mark, index);
-        //this sets the text content of the square of the same position to the mark on the board. 
+        
         squares[index].textContent = mark;
 
     });
+
+    messages.textContent = `It's ${turn}'s turn!`;
         
 };
 
@@ -44,7 +46,7 @@ function handleTurn(event) {
     let idx = squares.findIndex(function(square) {
     return square === event.target;
     });
-    // new code below
+    
     board[idx] = turn;
     // check your console logs to make sure it's working!
     //console.log(board);
