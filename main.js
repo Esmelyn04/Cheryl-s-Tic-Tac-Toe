@@ -7,11 +7,13 @@ console.log('Your JS is linked up. Be the person you needed when you were little
 
 let board;
 let turn = 'X';
+let win;
 
 /*----- cached element references -----*/
 
 const squares = Array.from(document.querySelectorAll('#board div'));
-// new code belowconst messages = document.querySelector('h2');
+    
+    const messages = document.querySelector('h2');
 
 /*----- event listeners -----*/
 document.getElementById('board').addEventListener('click', handleTurn);
@@ -51,14 +53,9 @@ function handleTurn(event) {
     // check your console logs to make sure it's working!
     //console.log(board);
 
-    // This is tidy
     turn = turn === 'X' ? 'O' : 'X';
-    // In an if statement it would look like: 
-    // if (turn === 'X') {
-    // turn = 'O' 
-    // } else {
-    // turn = 'X' 
-    // };
-    // writing the ternary saved you from all that. 
+
     render();
     };
+
+    win = board[0] && board[0] === board[1] && board[0] === board[2] ? board[0] : null;
