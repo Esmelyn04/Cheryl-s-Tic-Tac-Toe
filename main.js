@@ -39,3 +39,13 @@ function render() {
     });
         
 };
+
+function handleTurn(event) {
+    let idx = squares.findIndex(function(square) {
+    return square === event.target;
+    });
+    // new code below
+    board[idx] = turn;
+    // check your console logs to make sure it's working!
+    console.log(board);
+    };
