@@ -9,6 +9,7 @@ let board;
 
 /*----- cached element references -----*/
 
+const squares = Array.from(document.querySelectorAll('#board div'));
 
 /*----- event listeners -----*/
 
@@ -30,7 +31,10 @@ init();
 
 function render() {
     board.forEach(function(mark, index){
-        console.log(mark, index);
+        //console.log(mark, index);
+        //this sets the text content of the square of the same position to the mark on the board. 
+        squares[index].textContent = mark;
+
     });
         
 };
