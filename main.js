@@ -6,13 +6,14 @@ console.log('Your JS is linked up. Be the person you needed when you were little
 /*----- app's state (variables) -----*/
 
 let board;
+let turn = 'X';
 
 /*----- cached element references -----*/
 
 const squares = Array.from(document.querySelectorAll('#board div'));
 
 /*----- event listeners -----*/
-
+document.getElementById('board').addEventListener('click', handleTurn);
 
 /*----- functions -----*/
 
